@@ -73,3 +73,85 @@
 #include <cmath>
 using namespace std;
 
+void addNumbers(double a, double b) {
+    cout << fixed << setprecision(2) << "Result: " << a << " + " << b << " = " << (a + b) << endl;
+}
+
+void subtractNumbers(double a, double b) {
+    cout << fixed << setprecision(2) << "Result: " << a << " - " << b << " = " << (a - b) << endl;
+}
+
+void multiplyNumbers(double a, double b) {
+    cout << fixed << setprecision(2) << "Result: " << a << " * " << b << " = " << (a * b) << endl;
+}
+
+void divideNumbers(double a, double b) {
+    if (b == 0) {
+        cout << "Error: Cannot divide by zero." << endl;
+    } else {
+        cout << fixed << setprecision(2) << "Result: " << a << " / " << b << " = " << (a / b) << endl;
+    }
+}
+
+void modulusNumbers(double a, double b) {
+    if (b == 0) {
+        cout << "Error: Cannot divide by zero." << endl;
+    } else {
+        cout << fixed << setprecision(2) << "Result: " << a << " % " << b << " = " << fmod(a, b) << endl;
+    }
+}
+
+void exponentiateNumbers(double a, double b) {
+    cout << fixed << setprecision(2) << "Result: " << a << " ^ " << b << " = " << pow(a, b) << endl;
+}
+
+int main() {
+    int choice;
+    double firstNumber, secondNumber;
+
+    while (true) {
+        cout << "============================" << endl;
+        cout << "       SIMPLE CALCULATOR" << endl;
+        cout << "============================" << endl;
+        cout << "1. Addition" << endl;
+        cout << "2. Subtraction" << endl;
+        cout << "3. Multiplication" << endl;
+        cout << "4. Division" << endl;
+        cout << "5. Modulus" << endl;
+        cout << "6. Exponentiation" << endl;
+        cout << "7. Quit" << endl;
+        cout << "Select an operation (1-7): ";
+        cin >> choice;
+
+        if (choice == 7) {
+            cout << "Goodbye!" << endl;
+            break;
+        }
+
+        cout << "Enter first number: ";
+        cin >> firstNumber;
+        cout << "Enter second number: ";
+        cin >> secondNumber;
+
+        if (choice == 1) {
+            addNumbers(firstNumber, secondNumber);
+        } else if (choice == 2) {
+            subtractNumbers(firstNumber, secondNumber);
+        } else if (choice == 3) {
+            multiplyNumbers(firstNumber, secondNumber);
+        } else if (choice == 4) {
+            divideNumbers(firstNumber, secondNumber);
+        } else if (choice == 5) {
+            modulusNumbers(firstNumber, secondNumber);
+        } else if (choice == 6) {
+            exponentiateNumbers(firstNumber, secondNumber);
+        } else {
+            cout << "Invalid choice. Please try again." << endl;
+        }
+
+        cout << endl;
+    }
+
+    return 0;
+}
+
